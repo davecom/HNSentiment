@@ -3,6 +3,7 @@
 import requests
 import json
 import threading
+import nltk.sentiment.vader
 
 HN_TOP_STORIES_URL = "https://hacker-news.firebaseio.com/v0/topstories.json"
 HN_ITEM_QUERY_BASE_URL = "https://hacker-news.firebaseio.com/v0/item/"
@@ -37,7 +38,7 @@ def build_stories():
 def add_sentiment_to_comments():
     for story_comment_list in comments.values():
         for comment in story_comment_list:
-            
+            print(comment) # here's where to add sentiment using nltk to text
             
 if  __name__ =='__main__':
     print("Retrieving all comments through Hacker News API")
